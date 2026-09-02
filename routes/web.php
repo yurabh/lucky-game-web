@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\GameController;
-use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\Game\GameController;
+use App\Http\Controllers\User\RegistrationController;
 use App\Http\Middleware\EnsureValidGameLink;
 use Illuminate\Support\Facades\Route;
 
