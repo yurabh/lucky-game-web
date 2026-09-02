@@ -23,12 +23,19 @@
 Маршрути.
 
 GET / головна з формою реєстрації (Username, Phonenumber)
+
 POST /register створює користувача, генерує лінк і кидає на сторінку А
+
 GET /page-a/{link} сторінка А, тільки за діючим лінком
+
 POST /page-a/{link}/lucky Imfeelinglucky
+
 POST /page-a/{link}/history History
+
 POST /page-a/{link}/regenerate перегенерувати лінк
+
 POST /page-a/{link}/deactivate деактивувати лінк
+
 
 Лінк діє 7 днів. Якщо він протермінований, деактивований або просто набраний
 неправильно, користувача повертає на головну з повідомленням про помилку.
@@ -53,9 +60,13 @@ Deactivate Link закриває доступ за поточним лінком
 Бізнес-логіка лежить в app/Actions, окремий клас на кожну операцію:
 
 RegisterUserAction реєстрація користувача
+
 RegenerateLinkAction новий лінк
+
 DeactivateLinkAction деактивація
+
 PlayLuckyGameAction власне гра і підрахунок виграшу
+
 Concerns/GeneratesUniqueLink генерація лінка і дати протермінування
 
 Доступ до сторінки А стереже app/Http/Middleware/EnsureValidGameLink.php.
